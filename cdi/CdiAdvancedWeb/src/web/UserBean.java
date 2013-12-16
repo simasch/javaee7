@@ -31,9 +31,10 @@ public class UserBean implements Serializable {
 
 	@PostConstruct
 	protected void load() {
-		users = em.createQuery("SELECT u FROM User u", User.class).getResultList();
+		users = em.createQuery("SELECT u FROM User u", User.class)
+				.getResultList();
 	}
-	
+
 	@Transactional
 	public void save() {
 		User user = new User();
